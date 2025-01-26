@@ -29,7 +29,7 @@ def Crear_Tabla_Staging():
             BEGIN
                 CREATE TABLE {schema_name}.{table_name} (
                     [ID] INT IDENTITY(1,1) PRIMARY KEY,
-                    [ID_Inspeccion] INT,
+                    [ID_Inspeccion] BIGINT,
                     [Operador] VARCHAR(MAX) NULL,
                     [Equipo] INT NULL,
                     [Turno] INT NULL,
