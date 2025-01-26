@@ -25,10 +25,12 @@ def manage_registers_DB(FechaCargaBlob):
             WITH CTE AS (
                 SELECT 
                     [ID],
-                    CONCAT(CAST([Year] AS CHAR(4)), 
+                    CAST(CONCAT(
+                        CAST([Year] AS CHAR(4)), 
                         RIGHT('00' + CAST([Month] AS VARCHAR), 2), 
                         RIGHT('00' + CAST([Day] AS VARCHAR), 2), 
-                        REPLACE([Hour], ':', '')) AS ID_Inspeccion,
+                        REPLACE([Hour], ':', '')
+                    ) AS INT) AS ID_Inspeccion,
                     ROW_NUMBER() OVER (PARTITION BY 
                         CONCAT(CAST([Year] AS CHAR(4)), 
                             RIGHT('00' + CAST([Month] AS VARCHAR), 2), 
