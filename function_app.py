@@ -39,7 +39,7 @@ def transformstageDM(req: func.HttpRequest) -> func.HttpResponse:
             logging.error(f"Error inesperado ingreso a staging: {e}")
             return func.HttpResponse(f"Error inesperado ingreso a staging: {e}", status_code=500)
         
-        return func.HttpResponse("Consolidación completada, transformació exitosa exitosa.", status_code=200)
+        return func.HttpResponse("Consolidación completada, transformación exitosa.", status_code=200)
 
     except Exception as e:
         logging.error(f"Error inesperado en el proceso: {e}")
